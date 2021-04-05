@@ -7,7 +7,8 @@ async function getProjects() {
 
 async function createProject(project) {
     const [newProject] = await db('projects').insert(project);
-    return db('projects').where({ project_id : newProject });
+    const [checkData] = await db('projects').where({ project_id : newProject });
+    return checkData;
 }
 
 module.exports = {
