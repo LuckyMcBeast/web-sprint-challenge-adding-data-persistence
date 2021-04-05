@@ -113,6 +113,15 @@ After finishing your required elements, you can push your work further. These go
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. Explain the difference between Relational Databases and SQL.
+
+- A relational database is a type of database that is made up of tables. SQL is a language used to communicate with those databases.
+
 2. Why do tables need a Primary Key?
+
+-Primary keys identify a row of data and are unique. This allows them to to be referenced effectively.
+
 3. What is the name given to a table column that references the Primary Key on another table?
+- Child Table
+
 4. What do we need in order to have a _many to many_ relationship between two tables?
+- Create a separate table to reference these relationships.
