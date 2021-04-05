@@ -2,6 +2,7 @@
 const Express = require('express');
 const model = require('./model');
 
+
 const router = Express.Router();
 
 router.get('/', async (req, res, next) => {
@@ -15,7 +16,9 @@ router.get('/', async (req, res, next) => {
 
 router.post('/', async (req, res, next) => {
     try {
-        const newProject = await model.createProject(req.body);
+        const [newProject] = await model.createProject(req.body);
+        newProject.task_completed = Boolean(newProject.task_completed);
+        console.log(newProject);
         res.status(201).json({RESOURCE_CREATED : newProject});
     } catch (error) {
         next();
