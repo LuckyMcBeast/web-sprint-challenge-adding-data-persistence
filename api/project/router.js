@@ -17,7 +17,7 @@ router.get('/', async (req, res, next) => {
 router.post('/', async (req, res, next) => {
     try {
         const [newProject] = await model.createProject(req.body);
-        newProject.task_completed = Boolean(newProject.task_completed);
+        newProject.project_completed = Boolean(newProject.task_completed);
         console.log(newProject);
         res.status(201).json({RESOURCE_CREATED : newProject});
     } catch (error) {
